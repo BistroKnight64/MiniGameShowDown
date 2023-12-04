@@ -39,12 +39,12 @@ public class HexWaveManager : MonoBehaviour
 
     void Start()
     {
-
+        StartCoroutine(RoundTimer());   
     }
 
     void FixedUpdate()
     {
-     
+        DeathOfPlayer();
     }
 
     //Randomizes a number, then Selects a Hexagon and Symbol based on that number.
@@ -54,6 +54,13 @@ public class HexWaveManager : MonoBehaviour
         randomizedNumber = Random.Range(0, 22);
         chosenSymbol = symbols[randomizedNumber];
         Debug.Log($"randomized number is {randomizedNumber}");
+        Debug.Log($"The chosen symbol is symbol number {symbols[randomizedNumber]}");
+
+    }
+
+    //Uses the variable AssignChoseOne() generated to find the one variable that wonr be disabled.
+    void SelectHex()
+    {
 
 
     }
@@ -74,8 +81,11 @@ public class HexWaveManager : MonoBehaviour
     }
 
     //Decides how long it should takes between Rounds.
+    //Activates all needed methods to correctly run a round.
     IEnumerator RoundTimer()
     {
+        AssignChosenOne();
+
         yield return new WaitForSeconds(roundTime);
     }
 
@@ -83,22 +93,23 @@ public class HexWaveManager : MonoBehaviour
     //What different screen depends on is the game was in multiplayer mode or not, and which player died.
     IEnumerator Results()
     {
-        //Brings up Finish Screen
+        //Brings up Finish Screen, and pauses coroutine.
+        
         finishScreen.SetActive(true);
 
         yield return new WaitForSeconds(finishScreenTime);
 
         if (isMultiplayer == false && Player1 == null)
         {
-
+           deathScreen.SetActive(true);
         }
         else if (isMultiplayer == true && Player1 == null)
         {
-
+            player2WinScreen.SetActive(true);
         }
         else if (isMultiplayer == true && Player2 == null)
         {
-
+            player1WinScreen.SetActive(true);
         }
     }
 }
