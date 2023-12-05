@@ -11,7 +11,7 @@ public class HexWaveManager : MonoBehaviour
 
     [Header("Wave Managing")]
     public int waveNumber;
-    public float waveTime;
+    public float roundTime;
 
     [Header("Displays")]
     public TextMeshProUGUI scoreDisplay;
@@ -27,13 +27,13 @@ public class HexWaveManager : MonoBehaviour
 
     [Header("Components")]
     public AudioSource audSource;
+    public Hex CurrentHex;
 
     [Header("Other")]
     public int randomizedNumber;
     public GameObject Player1;
     public GameObject Player2;
     public bool isMultiplayer;
-    public float roundTime;
     public float finishScreenTime;
     public float deathScreenTime;
 
@@ -47,21 +47,29 @@ public class HexWaveManager : MonoBehaviour
         DeathOfPlayer();
     }
 
-    //Randomizes a number, then Selects a Hexagon and Symbol based on that number.
+    //Randomizes a number, then Selects a Hexagon based on that number.
     void AssignChosenOne()
     {
         //Declarations
-        randomizedNumber = Random.Range(0, 22);
-        chosenSymbol = symbols[randomizedNumber];
+        randomizedNumber = Random.Range(0, 6);
+        chosenOne = hexes[randomizedNumber];
         Debug.Log($"randomized number is {randomizedNumber}");
-        Debug.Log($"The chosen symbol is symbol number {symbols[randomizedNumber]}");
 
-    }
+        //Activates FallDown() in every Hex except the chosen one.
+        //Activates SelectSymbol() in the ChosenOne;
+        foreach (GameObject Hexer in hexes)
+        {
+            CurrentHex = Hexer.GetComponent<Hex>();
 
-    //Uses the variable AssignChoseOne() generated to find the one variable that wonr be disabled.
-    void SelectHex()
-    {
-
+            if (CurrentHex.assignedNumber == randomizedNumber)
+            {
+                CurrentHex.SelectSymbol();
+            }
+            else
+            {
+                CurrentHex.FallDown();
+            }
+        }
 
     }
 
@@ -87,6 +95,8 @@ public class HexWaveManager : MonoBehaviour
         AssignChosenOne();
 
         yield return new WaitForSeconds(roundTime);
+
+        StartCoroutine(RoundTimer());
     }
 
     //Brings up the finish screen, then brings up a different screen aftera set time.
