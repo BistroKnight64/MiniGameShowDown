@@ -15,6 +15,7 @@ public class Hex : MonoBehaviour
     public float RumbleTime;
     public float FallingTime;
     public float FallingSpeed;
+    public int sequencephase;
 
     // Start is called before the first frame update
     void Start()
@@ -23,21 +24,32 @@ public class Hex : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if(sequencephase == 1)
+        {
+            transform.Translate(Vector3.forward * FallingSpeed * Time.deltaTime);
+        }
+        else if(sequencephase == 2)
+        {
+            transform.Translate(Vector3.back * FallingSpeed * Time.deltaTime);
+        }
+        else
+        {
 
+        }
     }
 
     public void FallDown()
     {
-     
+        StartCoroutine(FallingSequence());
+
     }
 
     public void SelectSymbol()
     {
-        randomNumber = Random.Range(0, 0);
+        randomNumber = Random.Range(0, 2);
         selectedSymbol = symbols[randomNumber];
-        Debug.Log($"selectedSymbol is {symbols[randomNumber]}");
         
         selectedSymbol.SetActive(true);
     }
@@ -46,12 +58,14 @@ public class Hex : MonoBehaviour
     {
         yield return new WaitForSeconds(RumbleTime);
 
-        transform.Translate(Vector3.down * FallingSpeed * Time.deltaTime);
+        sequencephase = 1;
 
         yield return new WaitForSeconds(FallingTime);
 
-        transform.Translate(Vector3.up * FallingSpeed * Time.deltaTime);
+        sequencephase++;
 
         yield return new WaitForSeconds(FallingTime);
+
+        sequencephase = 0;
     }
 }

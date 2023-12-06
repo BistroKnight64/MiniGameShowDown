@@ -36,6 +36,8 @@ public class HexWaveManager : MonoBehaviour
     public bool isMultiplayer;
     public float finishScreenTime;
     public float deathScreenTime;
+    public int DebugCount;
+    public int DebugCount2;
 
     void Start()
     {
@@ -53,7 +55,8 @@ public class HexWaveManager : MonoBehaviour
         //Declarations
         randomizedNumber = Random.Range(0, 6);
         chosenOne = hexes[randomizedNumber];
-        Debug.Log($"randomized number is {randomizedNumber}");
+        DebugCount = 0;
+        DebugCount2 = 0;
 
         //Activates FallDown() in every Hex except the chosen one.
         //Activates SelectSymbol() in the ChosenOne;
@@ -64,10 +67,12 @@ public class HexWaveManager : MonoBehaviour
             if (CurrentHex.assignedNumber == randomizedNumber)
             {
                 CurrentHex.SelectSymbol();
+                DebugCount++;
             }
-            else
+            else if( CurrentHex.assignedNumber != randomizedNumber) 
             {
                 CurrentHex.FallDown();
+                DebugCount2++;
             }
         }
 
@@ -95,6 +100,17 @@ public class HexWaveManager : MonoBehaviour
         AssignChosenOne();
 
         yield return new WaitForSeconds(roundTime);
+
+        if(Player1 != null && isMultiplayer == false)
+        {
+            waveNumber++;
+            scoreDisplay.text = "Score:" + waveNumber;
+        }
+
+        foreach (GameObject Symbol in symbols)
+        {
+            Symbol.SetActive(false);
+        }
 
         StartCoroutine(RoundTimer());
     }

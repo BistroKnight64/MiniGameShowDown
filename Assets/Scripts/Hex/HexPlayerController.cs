@@ -35,7 +35,6 @@ public class HexPlayerController : MonoBehaviour
         //Object Destroys itself after falling past a specific height.
         if (gameObject.transform.position.y <= deathHeight)
         {
-            Debug.Log($"THE {gameObject.name} IS DEAD!!!");
             Destroy(gameObject);
         }
 
