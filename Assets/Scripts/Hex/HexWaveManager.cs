@@ -53,7 +53,7 @@ public class HexWaveManager : MonoBehaviour
     void AssignChosenOne()
     {
         //Declarations
-        randomizedNumber = Random.Range(0, 6);
+        randomizedNumber = Random.Range(0, 7);
         chosenOne = hexes[randomizedNumber];
         DebugCount = 0;
         DebugCount2 = 0;
@@ -104,7 +104,8 @@ public class HexWaveManager : MonoBehaviour
         if(Player1 != null && isMultiplayer == false)
         {
             waveNumber++;
-            scoreDisplay.text = "Score:" + waveNumber;
+            scoreDisplay.text = $"Score: {waveNumber}";
+            scoreDisplay.text = $"{waveNumber}";
         }
 
         foreach (GameObject Symbol in symbols)
@@ -113,6 +114,13 @@ public class HexWaveManager : MonoBehaviour
         }
 
         StartCoroutine(RoundTimer());
+    }
+
+    //When Activated, will pause all coroutines into this script.
+    //Deletes the gameobject this script is attached to.
+    void ShutDown()
+    {
+        Destroy(gameObject);
     }
 
     //Brings up the finish screen, then brings up a different screen aftera set time.
@@ -128,14 +136,18 @@ public class HexWaveManager : MonoBehaviour
         if (isMultiplayer == false && Player1 == null)
         {
            deathScreen.SetActive(true);
+           
         }
         else if (isMultiplayer == true && Player1 == null)
         {
             player2WinScreen.SetActive(true);
+           
         }
         else if (isMultiplayer == true && Player2 == null)
         {
             player1WinScreen.SetActive(true);
         }
+
+        ShutDown();
     }
 }

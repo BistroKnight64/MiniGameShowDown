@@ -48,7 +48,7 @@ public class Hex : MonoBehaviour
 
     public void SelectSymbol()
     {
-        randomNumber = Random.Range(0, 2);
+        randomNumber = Random.Range(0, 3);
         selectedSymbol = symbols[randomNumber];
         
         selectedSymbol.SetActive(true);

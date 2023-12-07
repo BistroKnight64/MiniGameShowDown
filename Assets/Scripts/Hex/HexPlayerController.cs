@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HexPlayerController : MonoBehaviour
 {
@@ -26,24 +27,28 @@ public class HexPlayerController : MonoBehaviour
     void Update()
     {
         //Declarations
-        horizInput = Input.GetAxis("Horizontal");
-        vertInput = Input.GetAxis("Vertical");
+        //horizInput = Input.GetAxis("Horizontal");
+        //vertInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.right * horizInput * moveSpeed * Time.deltaTime);
-        transform.Translate(Vector3.forward * vertInput * moveSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.right * horizInput * moveSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.forward * vertInput * moveSpeed * Time.deltaTime);
 
         //Object Destroys itself after falling past a specific height.
         if (gameObject.transform.position.y <= deathHeight)
         {
             Destroy(gameObject);
         }
+   
+    }
 
-        //Object Jumps into the air if they are currently on the ground, and press a key.
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if(isOnGround == true)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
+     
     }
 
     //Lets the object know when its returned to the ground.
