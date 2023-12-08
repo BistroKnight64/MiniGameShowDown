@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 public class HexPlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float horizInput;
-    public float vertInput;
+    public Vector2 moveInput;
     public float moveSpeed;
     public float jumpForce;
     public bool isOnGround;
@@ -26,12 +25,8 @@ public class HexPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Declarations
-        //horizInput = Input.GetAxis("Horizontal");
-        //vertInput = Input.GetAxis("Vertical");
 
-        //transform.Translate(Vector3.right * horizInput * moveSpeed * Time.deltaTime);
-        //transform.Translate(Vector3.forward * vertInput * moveSpeed * Time.deltaTime);
+        transform.Translate(moveInput * moveSpeed * Time.deltaTime);
 
         //Object Destroys itself after falling past a specific height.
         if (gameObject.transform.position.y <= deathHeight)
@@ -39,6 +34,13 @@ public class HexPlayerController : MonoBehaviour
             Destroy(gameObject);
         }
    
+    }
+
+    public void Moving(InputAction.CallbackContext context)
+    {
+        //Declarations
+        moveInput = context.ReadValue<Vector2>();
+        Debug.Log(moveInput.ToString());
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -49,6 +51,11 @@ public class HexPlayerController : MonoBehaviour
             isOnGround = false;
         }
      
+    }
+
+    public void Shove()
+    {
+
     }
 
     //Lets the object know when its returned to the ground.
