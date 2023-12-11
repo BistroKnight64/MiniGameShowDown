@@ -1,0 +1,34 @@
+{
+    "name": "Title Screen",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "95a9ee93-3496-47e3-9d15-a8f3431354dc",
+            "actions": [
+                {
+                    "name": "1",
+                    "type": "Button",
+                    "id": "e7c16394-f4e5-463b-80a4-7aac912384e7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5f63f812-b962-4cd1-8319-da84e99ef943",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
