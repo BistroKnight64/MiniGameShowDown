@@ -6,7 +6,7 @@
             "id": "95a9ee93-3496-47e3-9d15-a8f3431354dc",
             "actions": [
                 {
-                    "name": "1",
+                    "name": "Score Attack Start",
                     "type": "Button",
                     "id": "e7c16394-f4e5-463b-80a4-7aac912384e7",
                     "expectedControlType": "Button",
@@ -19,16 +19,49 @@
                 {
                     "name": "",
                     "id": "5f63f812-b962-4cd1-8319-da84e99ef943",
-                    "path": "",
+                    "path": "<Joystick>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "1",
+                    "action": "Score Attack Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44e76f65-f709-47f9-af5c-82191ad1d94d",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Title S",
+                    "action": "Score Attack Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Title S",
+            "bindingGroup": "Title S",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HID::DragonRise Inc.   Generic   USB  Joystick  >",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
