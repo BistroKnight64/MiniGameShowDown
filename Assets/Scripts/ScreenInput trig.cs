@@ -32,4 +32,9 @@ public class ScreenInputtrg : MonoBehaviour
     {
 
     }
+
+    void LoadChosenScene()
+    {
+        SceneManager.LoadScene("ChosenScene");
+    }
 }
