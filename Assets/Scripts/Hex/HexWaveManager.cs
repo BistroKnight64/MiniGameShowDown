@@ -84,7 +84,6 @@ public class HexWaveManager : MonoBehaviour
         if (Player1 == null)
         {
             StartCoroutine(Results());
-            Debug.Log("Player 1 has perished!");
         }
         else if (Player2 == null && isMultiplayer == true)
         {

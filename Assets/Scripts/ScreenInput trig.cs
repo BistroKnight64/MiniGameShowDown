@@ -25,7 +25,8 @@ public class ScreenInputtrg : MonoBehaviour
 
     public void TitleReturn(InputAction.CallbackContext context)
     {
-
+        Debug.Log("L");
+        SceneManager.LoadScene("Title");
     }
 
     public void Multiplayer(InputAction.CallbackContext context)

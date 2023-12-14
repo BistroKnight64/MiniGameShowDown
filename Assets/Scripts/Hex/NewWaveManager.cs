@@ -46,7 +46,7 @@ public class NewWaveManager : MonoBehaviour
     [Header("Components")]
     public AudioSource audSource;
     public Animator Toucan;
-    public Hex CurrentHex;
+    public NewHex CurrentHex;
 
     [Header("Other")]
     public int randomizedNumber;
@@ -85,7 +85,7 @@ public class NewWaveManager : MonoBehaviour
         //Activates SelectSymbol() in the ChosenOne;
         foreach (GameObject Hexer in hexes)
         {
-            CurrentHex = Hexer.GetComponent<Hex>();
+            CurrentHex = Hexer.GetComponent<NewHex>();
 
             if (CurrentHex.assignedNumber == randomizedNumber)
             {
@@ -164,24 +164,23 @@ public class NewWaveManager : MonoBehaviour
     //Activates all needed methods to correctly run a round.
     IEnumerator RoundTimer()
     {
+
+        yield return new WaitForSeconds(Phase1Time * DifficultyModifier);
+
         AssignChosenOne();
         audSource.PlayOneShot(Skquawk);
         SpeechBubble.SetActive(true);
         isAwake = true;
 
-        yield return new WaitForSeconds(Phase1Time * DifficultyModifier);
+        yield return new WaitForSeconds(Phase2Time * DifficultyModifier);
 
         audSource.PlayOneShot(Rumbling);
 
-        yield return new WaitForSeconds(Phase2Time * DifficultyModifier);
+        yield return new WaitForSeconds(Phase3Time * DifficultyModifier);
 
         audSource.PlayOneShot(Falling);
         SpeechBubble.SetActive(false);
         isAwake = false;
-
-        yield return new WaitForSeconds(Phase3Time * DifficultyModifier);
-
-
 
         yield return new WaitForSeconds(Phase4Time * DifficultyModifier);
         yield return new WaitForSeconds(Phase5Time * DifficultyModifier);
