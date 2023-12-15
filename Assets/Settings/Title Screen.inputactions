@@ -15,9 +15,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Title",
+                    "name": "New action",
                     "type": "Button",
-                    "id": "ac593f1e-18ba-4ecb-ac51-08fca1a445e9",
+                    "id": "b13c053f-d5a8-4052-a6a0-622c4699e896",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "2573919d-31bc-4ea8-a65e-c435aefa780d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -49,23 +58,67 @@
                 },
                 {
                     "name": "",
-                    "id": "f8fccaac-2737-44e4-b673-7994d0b9e80d",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
+                    "id": "e5120750-aea2-4b92-95d4-cdbfd507b234",
+                    "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Title S",
-                    "action": "Title",
+                    "groups": "",
+                    "action": "Score Attack Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1b403754-bcd1-4d5c-afe8-4ca35f59b674",
+                    "id": "0bdd4dd9-7b7e-450b-807d-72169be740c3",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ce55c48-94ef-46c4-98bc-5779f9b8d4ee",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61d0c0e0-67ca-425b-a7da-0b710feb69c0",
                     "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button6",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Title S",
-                    "action": "Title",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ade8ec0-419d-4410-9205-62d679e3301e",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8da8a2e7-1e66-4dd5-b93d-004f69413856",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

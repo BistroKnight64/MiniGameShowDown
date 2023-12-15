@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8868,6 +8868,73 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerList
       objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: b13c053f-d5a8-4052-a6a0-622c4699e896
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 2573919d-31bc-4ea8-a65e-c435aefa780d
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: New action map/New action[/DragonRise Inc.   Generic   USB  Joystick 
+        /button7,/DragonRise Inc.   Generic   USB  Joystick  /button3]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: New action map/Quit[/DragonRise Inc.   Generic   USB  Joystick  /button6,/DragonRise
+        Inc.   Generic   USB  Joystick  /button2]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 980080047}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonFunctionList, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779865458451228358, guid: b300a228022530e4d85037fdfec67b5b,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5779865458451228359, guid: b300a228022530e4d85037fdfec67b5b,
         type: 3}
       propertyPath: m_RootOrder
@@ -8925,6 +8992,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b300a228022530e4d85037fdfec67b5b, type: 3}
+--- !u!114 &980080047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5779865458451228356, guid: b300a228022530e4d85037fdfec67b5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 980080046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16d258280c6928449883613ea4aa3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &980706788
 GameObject:
   m_ObjectHideFlags: 0
@@ -11952,7 +12031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1489977578
 Transform:
   m_ObjectHideFlags: 0

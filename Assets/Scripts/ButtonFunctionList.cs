@@ -30,7 +30,13 @@ public class ButtonFunctionList : MonoBehaviour
     {
         SceneManager.LoadScene("Hex Multiplayer");
     }
-    
+
+    public void Quit()
+    {
+        Debug.Log("We all know where this is going, so lets just skip to the end!");
+        Application.Quit();
+    }
+
     //Method to load  a new scene
     public void StartNewScene(string sceneName)
     {
